@@ -1,38 +1,51 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.card:hover{
+  opacity: 0.7;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/*Modal style*/
+.backdrop{
+  padding:40px;
+  position:fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(7, 7, 7, 0.5);
+}
+.backdrop-image{
+  display: block;
+  width: 70%;
+  height: 50%;
+  margin:auto auto;
+  box-shadow: 3px 5px 7px rgba(0,0,0,0.5);
+}
+.close {
+  position: absolute;
+  cursor: pointer;
+  top: 15px;
+  right: 35px;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/*Media queries*/
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 22px;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media only screen and (min-width: 769px) {
+  .title {
+    font-size: 50px;
   }
 }

@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import {useState} from 'react';
 import './App.css';
+import {Popup} from './components/Popup';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {ImageGrid} from './components/Imagegrid';
 
 function App() {
+  const [selectedImg, setSelectedImg] = useState(null);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="title mt-4">
+        <h2>Photographer's showcase:</h2>
+      </div>
+      <div className="px-4">
+      <ImageGrid setSelectedImage={setSelectedImg}/>
+      { selectedImg &&(
+        <Popup selectedImg={selectedImg} setSelectedImg={setSelectedImg}/>
+        )}
+        </div>
     </div>
   );
 }
 
 export default App;
+
+
